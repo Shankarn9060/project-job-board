@@ -1,35 +1,26 @@
-// server.js
+// server/server.js
 
 const express = require("express");
-
 const cors = require("cors");
 
 const jobsRoutes = require("./routes/jobroute.js");
 
-
-
 const app = express();
 
-
-
 // Middleware
-
 app.use(cors());
-
 app.use(express.json());
 
+// Home Route
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Job Board API is running successfully"
+  });
+});
 
-
-// Routes
-
+// Jobs API Routes
 app.use("/api/jobs", jobsRoutes);
 
-
-
-// Server
-
-app.listen(5000, () => {
-
-  console.log("Server running on port 5000");
-
-});
+// Export app for Vercel Serverless Functions
+module.exports = app;
