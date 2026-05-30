@@ -19,34 +19,18 @@ function JobDetails() {
 
 
 
-
-  // Fetch job when page loads
-
-  useEffect(() => {
-  fetchJob();
-}, [fetchJob]);
-
-
-
-
-  // API Call
+useEffect(() => {
   const fetchJob = async () => {
-
     try {
-
       const res = await API.get(`/jobs/${id}`);
-
       setJob(res.data);
-
-    }
-
-    catch (error) {
-
+    } catch (error) {
       console.log(error);
-
     }
-
   };
+
+  fetchJob();
+}, [id]);
 
 
 
