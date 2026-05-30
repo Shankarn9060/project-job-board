@@ -21,11 +21,10 @@ function JobDetails() {
 
 
   // Fetch job when page loads
+
   useEffect(() => {
-
-    fetchJob();
-
-  }, []);
+  fetchJob();
+}, [fetchJob]);
 
 
 
