@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^8.24.0",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "ajv": "^7.2.4"
+  }
+}
